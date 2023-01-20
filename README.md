@@ -82,6 +82,7 @@
 
 <img src="https://i.imgur.com/E0zrQdz.png" width="400"/>
 <br>
+
 * 싱글톤으로 연결된 `currenBasket[]` 값이 정상적으로 변경되고있는 모습입니다.
 
 ---
