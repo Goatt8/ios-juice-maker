@@ -4,8 +4,6 @@
 //
 //  Created by 천승현 on 2023/01/13.
 //
-
-
 import UIKit
 
 protocol AlertDelegate {
@@ -17,9 +15,8 @@ protocol Builder {
     
     func setTitle(_ title: String) -> Builder
     func setMessage(_ message: String) -> Builder
-    func setAlertAction(title: String, style: UIAlertAction.Style) -> Builder
+    func setAlertAction(title: String, style: UIAlertAction.Style, delegateCase: Bool) -> Builder
 }
-
 
 final class AlertBuilder: Builder {
     
@@ -37,12 +34,14 @@ final class AlertBuilder: Builder {
         return self
     }
     
-    func setAlertAction(title: String, style: UIAlertAction.Style) -> Builder {
+    func setAlertAction(title: String, style: UIAlertAction.Style, delegateCase: Bool = false) -> Builder {
         let alertAction = UIAlertAction(
             title: title,
             style: style,
             handler: { _ in
-                self.delegate?.presentFruitStoreVC()
+                if delegateCase {
+                    self.delegate?.presentFruitStoreVC()
+                }
         })
         alert.addAction(alertAction)
         return self

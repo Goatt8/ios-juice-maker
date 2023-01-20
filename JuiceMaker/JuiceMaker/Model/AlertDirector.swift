@@ -14,21 +14,21 @@ final class AlertDirector {
         _ = builder
             .setTitle(AlertMessage.success)
             .setMessage("\(targetJuice.rawValue)" + AlertMessage.makeJuiceMessage)
-            .setAlertAction(title: AlertMessage.yes, style: .default)
+            .setAlertAction(title: AlertMessage.yes, style: .default, delegateCase: false)
     }
     
     func buildOutOfStockAlert(_ builder: Builder) {
         _ = builder
             .setTitle(AlertMessage.failure)
             .setMessage(AlertMessage.outOfStockMessage)
-            .setAlertAction(title: AlertMessage.no, style: .cancel)
-            .setAlertAction(title: AlertMessage.yes, style: .default)
+            .setAlertAction(title: AlertMessage.no, style: .cancel, delegateCase: false)
+            .setAlertAction(title: AlertMessage.yes, style: .default, delegateCase: true)
     }
     
     func buildUnknownAlert(_ builder: Builder) {
         _ = builder
             .setTitle(AlertMessage.unknownError)
             .setMessage(AlertMessage.unknwonErrorMessage)
-            .setAlertAction(title: AlertMessage.yes, style: .default)
+            .setAlertAction(title: AlertMessage.yes, style: .default, delegateCase: false)
     }
 }
