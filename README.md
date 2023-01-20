@@ -90,6 +90,7 @@
 
 <img src="https://i.imgur.com/0rNCSVC.png" width="400"/>
 <br>
+
 * JuiceMaker모델 부분에서 `make()`매서드를 통해 과일수량이 충분하다면 `reduceList[]`에 담아 `reduceStock()`과일재고를 감소시켜주고줍니다
 * `make()`매서드는 juiceMakeVC의 `orderButtonTapped()`매서드안에서 불러주며, 
     * 과일주스가 성공적으로 생성되고 과일이 차감되었다면, `showSuccessAlert()`를  
